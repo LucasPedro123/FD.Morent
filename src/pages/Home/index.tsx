@@ -1,5 +1,5 @@
+import { BackgroundCircle, BackgroundImage, HeroImage } from "../../assets/Images/index";
 import { Button, CardItem, Header, Footer } from "../../components";
-import CarImage from "../../assets/Images/Main-image-car.svg";
 import * as S from "./style";
 
 export const Home: React.FC = () => {
@@ -145,11 +145,12 @@ export const Home: React.FC = () => {
             <S.Button>Seu Carro</S.Button>
           </S.ButtonGroup>
         </S.Wrapper>
-        <S.ImageMain src={CarImage} />
+        <S.ImageMain src={`${HeroImage}`} />
       </S.Main>
       <S.Container>
         <S.CardsSection>
           <S.Card>
+            <S.ImageBackground src={`${BackgroundCircle}`} />
             <S.CardContent>
               <S.CardTitle>A melhor plataforma para se alugar</S.CardTitle>
               <S.CardSubtitle>
@@ -162,6 +163,8 @@ export const Home: React.FC = () => {
             <S.CardImage src={carLink} />
           </S.Card>
           <S.Card primary={true}>
+
+            <S.ImageBackground src={`${BackgroundImage}`} />
             <S.CardContent>
               <S.CardTitle>
                 Melhor forma de alugar um carro por um preço baixo
@@ -199,7 +202,7 @@ export const Home: React.FC = () => {
           </S.CatalogItems>
         </S.CatalogSection>
       </S.Container>
-        <Footer />
+      <Footer />
     </>
   );
 };

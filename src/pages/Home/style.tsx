@@ -82,6 +82,8 @@ export const CardsSection = styled.section`
 `;
 
 export const Card = styled.div<{ primary?: boolean }>`
+  position: relative;
+  overflow: hidden;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -159,12 +161,20 @@ export const CatalogBottomContent = styled.div`
 `;
 
 export const CatalogTop = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
 
 export const CatalogTitle = styled.h3`
   ${({ theme }) => theme.fontSize.semibold["type@20"]}
   color: ${({ theme }) => theme.colors.secondary.light300};
+`;
+
+export const ImageBackground = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  z-index: 0;
 `;

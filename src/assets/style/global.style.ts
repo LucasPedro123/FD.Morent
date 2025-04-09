@@ -2,6 +2,8 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   * {
+    position: relative; 
+    z-index: 1;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
