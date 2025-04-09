@@ -1,5 +1,5 @@
 import { Button, CardItem, Header, Footer } from "../../components";
-import CarImage from "../../assets/images/main-image-car.svg";
+import CarImage from "../../assets/Images/Main-image-car.svg";
 import * as S from "./style";
 
 export const Home: React.FC = () => {
