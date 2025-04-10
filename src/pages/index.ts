@@ -1,3 +1,3 @@
-export { Home } from "./home/index.tsx";
+export { Home } from "./home";
 export { CarDetails } from "./carDetails/index";
 export { Payment } from "./payment/index";
