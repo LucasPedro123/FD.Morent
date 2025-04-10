@@ -7,12 +7,13 @@ export const Container = styled.header`
     justify-content: space-between;
     align-items: center;
     background-color: ${({ theme }) => theme.colors.white};
-    padding: 0 60px;
+    padding: 0 5%;
 `
 
 export const Title = styled.h1`
     ${({ theme }) => theme.fontSize.bold["type@32"]}
     color: ${({ theme }) => theme.colors.primary.default};
+    cursor: pointer;
 `
 
 export const ImageUser = styled.img`
