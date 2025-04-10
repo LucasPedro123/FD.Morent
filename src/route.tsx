@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { CarDetails, Home, Payment } from "./pages";
+import { CarDetails, Home, Payment } from "./pages/index";
 
 export const Router: React.FC = () => {
   return (
