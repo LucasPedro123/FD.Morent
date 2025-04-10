@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Footer = styled.footer`
-  padding: 60px;
+  padding: 5%;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -15,6 +15,12 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+
+  @media (max-width: 958px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+  }
 `;
 
 export const Content = styled.div`
@@ -38,6 +44,10 @@ export const Subtitle = styled.h2`
 export const NavItems = styled.div`
   display: flex;
   gap: 60px;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
 `;
 
 export const NavItem = styled.div`
@@ -69,6 +79,11 @@ export const FooterBottom = styled.div`
   width: 100%;
   height: 1px;
   border-top: 1px solid rgba(19, 19, 19, 0.16);
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+    gap: 20px;
+  }
 `;
 
 export const Copyright = styled.p`
@@ -83,7 +98,7 @@ export const FooterBottomContent = styled.div`
 `;
 
 export const TextLink = styled(Link)`
-    ${({ theme }) => theme.fontSize.medium["type@16"]}
-    color: ${({ theme }) => theme.colors.secondary.default};
-    text-decoration: none;
-`
+  ${({ theme }) => theme.fontSize.medium["type@16"]}
+  color: ${({ theme }) => theme.colors.secondary.default};
+  text-decoration: none;
+`;
