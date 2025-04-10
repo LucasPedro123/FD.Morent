@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  padding: 0 60px;
+  padding: 0 5%;
   height: 100%;
   background-color: ${({ theme }) => theme.colors.background};
   padding-block: 105px;
@@ -10,6 +10,14 @@ export const Container = styled.div`
 export const Title = styled.h1`
   ${({ theme }) => theme.fontSize.bold["type@72"]}
   color: ${({ theme }) => theme.colors.gray};
+
+  @media (max-width: 1480px) {
+   font-size: 56px;
+  }
+
+  @media (max-width: 1080px) {
+    ${({ theme }) => theme.fontSize.bold["type@40"]}
+  }
 `;
 
 export const Subtitle = styled.h2`
@@ -24,7 +32,7 @@ export const Content = styled.div`
 `;
 
 export const Main = styled.main`
-  padding: 0 60px;
+  padding: 0 5%;
   height: 80vh;
   display: flex;
   justify-content: space-between;
@@ -33,15 +41,20 @@ export const Main = styled.main`
 `;
 
 export const ImageMain = styled.img`
-  width: 100%;
-  margin-left: -60px;
+  width: 50%;
+  height: auto;
+  object-fit: contain;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
+
 
 export const Button = styled.button`
   ${({ theme }) => theme.fontSize.medium["type@20"]}
   padding: 10px 25px;
   gap: 10px;
-  width: 40%;
+  width: 60%;
   height: 100%;
   background: #ffffff;
   border: 2px solid ${({ theme }) => theme.colors.primary.default};
@@ -57,20 +70,30 @@ export const Button = styled.button`
     background: ${({ theme }) => theme.colors.primary.default};
     color: #fff;
   }
+
+ 
 `;
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 60px;
-  width: 90%;
+  width: 50%;
+
+  @media (max-width: 1080px) {
+   width: 100%;
+  }
 `;
 
 export const ButtonGroup = styled.div`
   display: flex;
   height: 64px;
-  width: 55%;
+  width: 100%;
   gap: 20px;
+
+  @media (min-width: 1440px) {
+   width:55%;
+  }
 `;
 
 export const CardsSection = styled.section`
@@ -79,6 +102,10 @@ export const CardsSection = styled.section`
   width: 100%;
   gap: 32px;
   justify-content: space-between;
+
+  @media (max-width: 1040px) {
+    flex-direction: column;
+  }
 `;
 
 export const Card = styled.div<{ primary?: boolean }>`
@@ -89,7 +116,6 @@ export const Card = styled.div<{ primary?: boolean }>`
   flex-direction: column;
   justify-content: space-between;
   gap: 20px;
-  padding: 24px;
   color: #fff;
   border-radius: 10px;
   background: ${({ primary, theme }) =>
@@ -97,6 +123,8 @@ export const Card = styled.div<{ primary?: boolean }>`
 `;
 
 export const CardContent = styled.div`
+  padding-left: 24px;
+  padding-top: 24px;
   display: flex;
   flex-direction: column;
   max-width: 414px;
@@ -125,6 +153,7 @@ export const CardImage = styled.img`
   max-width: 406px;
   width: 100%;
   height: 120px;
+  margin-bottom: 24px;
 `;
 
 export const CatalogSection = styled.section`
@@ -140,6 +169,14 @@ export const CatalogItems = styled.div`
   width: 100%;
   grid-template-columns: repeat(4, 1fr);
   gap: 32px;
+
+  @media (max-width: 1480px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 791px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 export const CatalogItem = styled.div`
@@ -147,6 +184,7 @@ export const CatalogItem = styled.div`
   flex-direction: column;
   justify-content: space-between;
   padding: 24px;
+  width: 100px;
 `;
 
 export const CatalogTopContent = styled.div`

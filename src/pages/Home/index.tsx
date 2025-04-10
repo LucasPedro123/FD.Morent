@@ -1,4 +1,8 @@
-import { BackgroundCircle, BackgroundImage, HeroImage } from "../../assets/Images/index";
+import {
+  BackgroundCircle,
+  BackgroundImage,
+  HeroImage,
+} from "../../assets/Images/index";
 import { Button, CardItem, Header, Footer } from "../../components";
 import * as S from "./style";
 
@@ -8,6 +12,7 @@ export const Home: React.FC = () => {
 
   const catalogInfo = [
     {
+      id: 1,
       title: "Carro 1",
       subtitle: "Carro 1 Subtitle",
       imageSrc: carLink,
@@ -18,6 +23,7 @@ export const Home: React.FC = () => {
       isLine: true,
     },
     {
+      id: 2,
       title: "Carro 1",
       subtitle: "Carro 1 Subtitle",
       imageSrc: carLink,
@@ -28,6 +34,7 @@ export const Home: React.FC = () => {
       isLine: true,
     },
     {
+      id: 3,
       title: "Carro 1",
       subtitle: "Carro 1 Subtitle",
       imageSrc: carLink,
@@ -38,6 +45,7 @@ export const Home: React.FC = () => {
       isLine: true,
     },
     {
+      id: 4,
       title: "Carro 1",
       subtitle: "Carro 1 Subtitle",
       imageSrc: carLink,
@@ -48,6 +56,7 @@ export const Home: React.FC = () => {
       isLine: true,
     },
     {
+      id: 5,
       title: "Carro 1",
       subtitle: "Carro 1 Subtitle",
       imageSrc: carLink,
@@ -58,6 +67,7 @@ export const Home: React.FC = () => {
       isLine: true,
     },
     {
+      id: 6,
       title: "Carro 1",
       subtitle: "Carro 1 Subtitle",
       imageSrc: carLink,
@@ -68,6 +78,7 @@ export const Home: React.FC = () => {
       isLine: true,
     },
     {
+      id: 7,
       title: "Carro 1",
       subtitle: "Carro 1 Subtitle",
       imageSrc: carLink,
@@ -78,6 +89,7 @@ export const Home: React.FC = () => {
       isLine: true,
     },
     {
+      id: 8,
       title: "Carro 1",
       subtitle: "Carro 1 Subtitle",
       imageSrc: carLink,
@@ -88,6 +100,7 @@ export const Home: React.FC = () => {
       isLine: true,
     },
     {
+      id: 9,
       title: "Carro 1",
       subtitle: "Carro 1 Subtitle",
       imageSrc: carLink,
@@ -98,6 +111,7 @@ export const Home: React.FC = () => {
       isLine: true,
     },
     {
+      id: 10,
       title: "Carro 1",
       subtitle: "Carro 1 Subtitle",
       imageSrc: carLink,
@@ -108,6 +122,7 @@ export const Home: React.FC = () => {
       isLine: true,
     },
     {
+      id: 11,
       title: "Carro 1",
       subtitle: "Carro 1 Subtitle",
       imageSrc: carLink,
@@ -118,6 +133,7 @@ export const Home: React.FC = () => {
       isLine: true,
     },
     {
+      id: 12,
       title: "Carro 1",
       subtitle: "Carro 1 Subtitle",
       imageSrc: carLink,
@@ -141,7 +157,15 @@ export const Home: React.FC = () => {
             </S.Subtitle>
           </S.Content>
           <S.ButtonGroup>
-            <Button fontSize={20} label="Alugue em um clique" primary={true} />
+            <Button
+              fontSize={20}
+              label="Alugue em um clique"
+              primary={true}
+              onClick={() => {
+                const section = document.getElementById("catalog");
+                section?.scrollIntoView({ behavior: "smooth" });
+              }}
+            />
             <S.Button>Seu Carro</S.Button>
           </S.ButtonGroup>
         </S.Wrapper>
@@ -163,7 +187,6 @@ export const Home: React.FC = () => {
             <S.CardImage src={carLink} />
           </S.Card>
           <S.Card primary={true}>
-
             <S.ImageBackground src={`${BackgroundImage}`} />
             <S.CardContent>
               <S.CardTitle>
@@ -179,7 +202,7 @@ export const Home: React.FC = () => {
             <S.CardImage src={carLink} />
           </S.Card>
         </S.CardsSection>
-        <S.CatalogSection>
+        <S.CatalogSection id="catalog">
           <S.CatalogTop>
             <S.CatalogTitle>Catalogo</S.CatalogTitle>
           </S.CatalogTop>
@@ -197,6 +220,7 @@ export const Home: React.FC = () => {
                   item.detailsSteering == "Automatic" ? "Automatic" : "Manual"
                 }
                 detailsCapacity={item.detailsCapacity}
+                redirect={`/car-details/${item.id}`}
               />
             ))}
           </S.CatalogItems>
