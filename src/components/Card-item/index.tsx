@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import { Button } from "../Button";
 import * as S from "./style";
 
@@ -10,6 +11,7 @@ type CardItemProps = {
   detailsSteering: "Manual" | "Automatic";
   detailsCapacity: number;
   isLine: boolean;
+  redirect?: string;
 };
 
 export const CardItem: React.FC<CardItemProps> = ({
@@ -21,7 +23,10 @@ export const CardItem: React.FC<CardItemProps> = ({
   subtitle,
   imageSrc,
   isLine,
+  redirect,
 }) => {
+  const navigate = useNavigate();
+
   return (
     <S.Container>
       <S.TopContent>
@@ -50,7 +55,7 @@ export const CardItem: React.FC<CardItemProps> = ({
           R${price}/<S.Span>dia</S.Span>
         </S.Price>
         <S.ButtonContainer>
-          <Button fontSize={16} label="Details" primary={true} />
+          <Button fontSize={16} label="Details" primary={true} onClick={()=>redirect && navigate(redirect)}/>
         </S.ButtonContainer>
       </S.BottomContent>
     </S.Container>
