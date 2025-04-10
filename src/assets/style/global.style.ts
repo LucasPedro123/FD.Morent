@@ -37,7 +37,6 @@ export const GlobalStyle = createGlobalStyle`
 
   p {
     margin-bottom: 0;
-    line-height: 0;
   }
 
   input, textarea {
